@@ -28,18 +28,18 @@ class InputGetter:
         self.__content = []
 
     def getinput(self):
-        # return input()
+        return input()
 
-        if self.__initial:
-            self.__initial = False
-            with open("tc2.txt") as f:
-                self.__content = f.readlines()
-
-            for i in range(len(self.__content)):
-                if "\n" in self.__content[i]:
-                    self.__content[i] = self.__content[i][:-1]
-
-        return self.__content.pop(0)
+        # if self.__initial:
+        #     self.__initial = False
+        #     with open("tc2.txt") as f:
+        #         self.__content = f.readlines()
+        #
+        #     for i in range(len(self.__content)):
+        #         if "\n" in self.__content[i]:
+        #             self.__content[i] = self.__content[i][:-1]
+        #
+        # return self.__content.pop(0)
 
 
 def getdigitvalue(value):
@@ -95,9 +95,6 @@ while cardsPlayerOne.size() > 0 and cardsPlayerTwo.size() > 0:
     cardsAtStakePlayerTwo = [cardPlayerTwo]
 
     result = comparecards(cardPlayerOne, cardPlayerTwo)
-
-    if result == 0:
-        turnCount += 1
 
     while result == 0:
         # here starts the war
